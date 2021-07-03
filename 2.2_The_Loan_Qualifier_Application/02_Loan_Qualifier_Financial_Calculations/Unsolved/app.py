@@ -40,7 +40,8 @@ def calculate_monthly_debt_ratio(monthly_debt_payment, monthly_income):
 # so that we can evaluate the risk of lending money to the borrower
 def calculate_loan_to_value_ratio(loan_amount, home_value):
     # @TODO Implement loan_to_value_ratio calculation
-
+    loan_to_value_ratio = int(loan_amount) / int(home_value)
+    return loan_to_value_ratio
 
 # This function is the main execution point of the application. It triggers all the business logic.
 def run():
