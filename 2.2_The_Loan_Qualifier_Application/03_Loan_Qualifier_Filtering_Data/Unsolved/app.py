@@ -58,7 +58,12 @@ def filter_max_loan_size(loan_amount, bank_list):
 # I want to filter the bank list by checking if the customer's credit score is equal or greater than the minimum allowed credit score defined by the bank
 # so that we can know which banks are willing to offer a loan to the customer
 def filter_credit_score(credit_score, bank_list):
+    credit_score_approval_list = []
 
+    for bank in bank_list:
+        if credit_score >= int(bank[4]):
+            credit_score_approval_list.append(bank)
+    return credit_score_approval_list
 
 
 # @TODO Define a function that implements the following user story:
@@ -66,7 +71,12 @@ def filter_credit_score(credit_score, bank_list):
 # I want to filter the bank list by comparing if the customer's debt-to-income is equal or less than the maximum debt-to-income ratio allowed by the bank
 # so that we can assess if the customer will have payment capacity according to the bank's criteria
 def filter_debt_to_income(monthly_debt_ratio, bank_list):
+    debt_to_income_approval_list = []
 
+    for bank in bank_list:
+        if monthly_debt_ratio <= float(bank[3]):
+            debt_to_income_approval_list.append(bank)
+    return debt_to_income_approval_list
 
 
 # @TODO Define a function that implements the following user story:
@@ -74,7 +84,12 @@ def filter_debt_to_income(monthly_debt_ratio, bank_list):
 # I want to filter the bank list by checking if the customer's loan-to-value is equal or less than the maximum loan-to-value ratio allowed by the bank
 # so that we assess if the customer's home value is worth as an asset to secure the loan
 def filter_loan_to_value(loan_to_value_ratio, bank_list):
+    loan_to_value_approval_list = []
 
+    for bank in bank_list:
+        if loan_to_value_ratio <= float(bank[2]):
+            loan_to_value_approval_list.append(bank)
+    return loan_to_value_approval_list
 
 
 # This function implements the following user story:
