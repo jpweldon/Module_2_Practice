@@ -1,5 +1,5 @@
 
-# Calculator App
+# Calculator App (Monolithic Version)
 
 import statistics # Importing the statistics package
 
