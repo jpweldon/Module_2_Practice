@@ -1,6 +1,8 @@
 
 # Calculator App
 
+import statistics # Importing the statistics package
+
 # Define an Addition Function
 def add(num1, num2):
     return num1 + num2
@@ -12,6 +14,10 @@ def sub(num1, num2):
 # Define a Multiplication Function
 def mul(num1, num2):
     return num1 * num2
+
+# Define a Mean Function
+def mean(numbers):
+    return statistics.mean(numbers)
 
 def calculator():
     # Define Calculator Values
@@ -30,5 +36,9 @@ def calculator():
     # Test Multiplication
     result = mul(a, b)
     print(f"Multiplication: {a} * {b} = {result}")
+
+    # Test Mean
+    result = mean([a, b, c])
+    print(f"Mean: ({a} + {b} + {c}) / {len([a, b, c])} = {result: .3f}")
 
 calculator()
