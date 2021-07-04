@@ -8,7 +8,16 @@ to home value ratio.
 
 
 def filter_loan_to_value(loan_to_value_ratio, bank_list):
+    """Filters the bank list by the maximum loan to value ratio.
 
+    Args:
+        loan_to_value_ratio (float): The applicant's loan to value ratio.
+        bank_list (list of lists): The available bank loans.
+
+    Returns:
+        A list of qualifying bank loans.
+    """
+    
     loan_to_value_approval_list = []
 
     for bank in bank_list:

@@ -22,7 +22,14 @@ def calculate_monthly_debt_ratio(monthly_debt_payment, monthly_income):
 
 
 def calculate_loan_to_value_ratio(loan_amount, home_value):
-    # Calculates users loan to value ratio based on inputs.
+    """Calculates users loan to value ratio based on inputs.
 
+    Args:
+        loan_amount (int): The requested loan amount.
+        home_value (int): The home value.
+
+    Returns:
+        The loan-to-value ratio.
+    """
     loan_to_value_ratio = int(loan_amount) / int(home_value)
     return loan_to_value_ratio

@@ -8,6 +8,15 @@ import csv
 
 
 def load_csv(csvpath):
+    """Reads the CSV file from path provided.
+
+    Args:
+        csvpath (Path): The csv file path.
+
+    Returns:
+        A list of lists that contains the rows of data from the CSV file.
+
+    """
     with open(csvpath, "r") as csvfile:
         data = []
         csvreader = csv.reader(csvfile, delimiter=",")
