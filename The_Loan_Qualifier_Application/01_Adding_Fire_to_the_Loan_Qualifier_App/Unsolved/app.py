@@ -1,3 +1,5 @@
+
+import fire
 from pathlib import Path
 
 from qualifier.utils.fileio import load_csv, save_csv
@@ -77,16 +79,18 @@ def save_qualifying_loans(qualifying_loans):
     save_csv(csvpath, qualifying_loans)
 
 
-def run():
+def run(credit_score, debt, income):
+    # Listing arguments in command-line instruction: python app.py --credit_score=750 --debt=5000 --income=20000
+    # Listing arguments in command-line instruction: python app.py --credit_score=850 --debt=5000 --income=20000
     """The main function for running the script."""
 
     # Load the latest Bank data
     bank_data = load_bank_data("./data/daily_rate_sheet.csv")
 
     # Set the applicant's information
-    credit_score = 750
-    debt = 5000
-    income = 20000
+    # credit_score = 750
+    # debt = 5000
+    # income = 20000
     loan_amount = 100000
     home_value = 210000
 
@@ -98,5 +102,6 @@ def run():
     # Save qualifying loans
     save_qualifying_loans(qualifying_loans)
 
+if __name__ == "__main__":
+    fire.Fire(run)
 
-run()
