@@ -1,11 +1,17 @@
 
 # Calculator App
 
+# Define an Addition Function
 def add(num1, num2):
     return num1 + num2
 
+# Define a Subtraction Function
 def sub(num1, num2):
     return num1 - num2
+
+# Define a Multiplication Function
+def mul(num1, num2):
+    return num1 * num2
 
 def calculator():
     # Define Calculator Values
@@ -20,5 +26,9 @@ def calculator():
     # Test Subtraction
     result = sub(a, b)
     print(f"Subtraction: {a} - {b} = {result}")
+
+    # Test Multiplication
+    result = mul(a, b)
+    print(f"Multiplication: {a} * {b} = {result}")
 
 calculator()
