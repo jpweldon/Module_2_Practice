@@ -2,16 +2,10 @@ from pathlib import Path
 import csv
 
 from qualifier.utils.fileio import load_csv
-
-def calculate_monthly_debt_ratio(monthly_debt_payment, monthly_income):
-    monthly_debt_ratio = int(monthly_debt_payment) / int(monthly_income)
-    return monthly_debt_ratio
-
-
-def calculate_loan_to_value_ratio(loan_amount, home_value):
-    loan_to_value_ratio = int(loan_amount) / int(home_value)
-    return loan_to_value_ratio
-
+from qualifier.utils.calculators import (
+    calculate_monthly_debt_ratio,
+    calculate_loan_to_value_ratio
+)
 
 def filter_max_loan_size(loan_amount, bank_list):
     loan_size_approval_list = []
