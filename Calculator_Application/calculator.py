@@ -1,26 +1,12 @@
 
 # Calculator App (Monolithic Version)
 
-import statistics # Importing the statistics package
-
-# Define an Addition Function
-def add(num1, num2):
-    return num1 + num2
-
-# Define a Subtraction Function
-def sub(num1, num2):
-    return num1 - num2
-
-# Define a Multiplication Function
-def mul(num1, num2):
-    return num1 * num2
-
-# Define a Mean Function
-def arithmetic_mean(numbers):
-    return statistics.mean(numbers)
-
-def harmonic_mean(numbers):
-    return statistics.harmonic_mean(numbers)
+# Import Functions
+from calculations.add import add # from calculations folder add module import add function
+from calculations.sub import sub # from calculations folder sub module import sub function
+from calculations.mul import mul # from calculations folder mul module import mul function
+from calculations.mean.arithmetic import arithmetic_mean # from calculations folder mean subfolder arithmetic module import arithmetic_mean function
+from calculations.mean.harmonic import harmonic_mean # from calculations folder mean subfolder harmonic module import harmonic_mean function
 
 def calculator():
     # Define Calculator Values
