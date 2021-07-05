@@ -27,6 +27,26 @@ def load_bank_data():
 
     return load_csv(csvpath)
 
+def get_applicant_info():
+    """Prompt dialog to get the applicant's financial information.
+
+    Returns:
+        Returns the applicant's financial information.
+    """
+
+    credit_score = questionary.text("What's your credit score?").ask()
+    debt = questionary.text("What's your current amount of monthly debt?").ask()
+    income = questionary.text("What's your total monthly income?").ask()
+    loan_amount = questionary.text("What's your desired loan amount?").ask()
+    home_value = questionary.text("What's your home value?").ask()
+
+    credit_score = int(credit_score)
+    debt = float(debt)
+    income = float(income)
+    loan_amount = float(loan_amount)
+    home_value = float(home_value)
+
+    return credit_score, debt, income, loan_amount, home_value
 
 def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_value):
     """Determine which loans the user qualifies for.
@@ -80,20 +100,21 @@ def save_qualifying_loans(qualifying_loans):
     save_csv(csvpath, qualifying_loans)
 
 
-def run(credit_score, debt, income):
+def run():
     """The main function for running the script."""
 
     # Load the latest Bank data
     bank_data = load_bank_data()
 
-    # Set the applicant's information
-    # credit_score = 750
-    # debt = 5000
-    # income = 20000
-    loan_amount = 100000
-    home_value = 210000
+    # Set the applicant's information # First Version
+    # credit_score = 750 # First Version
+    # debt = 5000 # First Version
+    # income = 20000 # First Version
+    # loan_amount = 100000 # First and Second Version
+    # home_value = 210000 # First and Second Version
 
-
+    # Get the applicant's information
+    credit_score, debt, income, loan_amount, home_value = get_applicant_info()
 
     # Find qualifying loans
     qualifying_loans = find_qualifying_loans(
